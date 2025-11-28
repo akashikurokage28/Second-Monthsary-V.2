@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Tangerine:wght@400;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Libre Baskerville, serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --bg-color: #551015;
+    --text-color: #efdabd;
+    --second-text-color: #161411;
+    --heading-color: #FFA751;
+    --accent-color: #fe1d2b;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.main-container{
+    width: 100%;
+    height: 100svh;
+}
+
+/* Hero Section */
+.video-section{
+    width: 100%;
+    height: 100svh;
+}
+
+.video-section .image-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-section .image-bg::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #551015, #BB232E, #551015);
+    mix-blend-mode: multiply;
+    opacity: .8;
+}
+
+.video-section .image-bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    flex-shrink: 0;
+}
+
+
+.contents{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    padding: 56px 24px 0;
+}
+
+.contents h1{
+    font-family: Tangerine, serif;
+    font-size: 3.125rem;
+    font-weight: 700;
+    -webkit-text-stroke: #efdabd;
+    -webkit-text-stroke-width: 1px;
+}
+
+.contents .video-container{
+    aspect-ratio: 16/9;
+    width: 100%;
+    position: relative;
+}
+
+.contents .video-container::before{
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border: 3px dashed var(--heading-color);
+    width: 100%;
+    height: 100%;
+}
+
+.contents .video-container video{
+    all: unset;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
